@@ -36,7 +36,7 @@ namespace MobiNews.Core.Handlers
 
         void ProcessXmlFeed(string xmlFeedUri)
         {
-
+            // in a real world scenario this code would be replaced by the 
             throw new NotImplementedException();
         }
 
