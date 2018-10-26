@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Classes\AutofacModule.cs" />
     <Compile Include="IXmlFeedProvider.cs" />
+    <Compile Include="IXmlFeedService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlFeedProvider.cs" />
     <Compile Include="XmlFeedService.cs" />

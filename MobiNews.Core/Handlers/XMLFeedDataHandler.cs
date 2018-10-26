@@ -1,18 +1,24 @@
-﻿using System;
+﻿using MockXmlFeedService;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace MobiNews.Core.Handlers
 {
     public class XMLFeedDataHandler : XmlHandlerBase, IXMLFeedDataHandler
     {
         private PublishingXml publishingXml;
+        private IXmlFeedService _xmlFeedService;
 
-        public XMLFeedDataHandler()
+        public XMLFeedDataHandler(IXmlFeedService xmlFeedService)
         {
+            _xmlFeedService = xmlFeedService;
         }
 
         public PublishingXml GetPublishingStories()
@@ -34,27 +40,44 @@ namespace MobiNews.Core.Handlers
             return publishingXml;
         }
 
-        void ProcessXmlFeed(string xmlFeedUri)
-        {
-            // in a real world scenario this code would be replaced by the 
-            throw new NotImplementedException();
-        }
-
         public PublishingXml GetPublishingStories(string xmlFeedUri)
         {
-            throw new NotImplementedException();
+            if(!string.IsNullOrEmpty(xmlFeedUri))
+            {
+                ProcessXmlFeed(xmlFeedUri);
+            }
+
+            return publishingXml;
         }
 
-        //public Publishing GetXmlFeedData(string xmlfeedPath)
+        private void ProcessXmlFeed(string xmlFeedUri)
+        {
+            // in a real world scenario this code would be replaced by the method(s)
+            // using WebRequest to get a response from the provided Uri path
+            var xmlFeedData = _xmlFeedService.GetXmlFeed();
+
+            var xmlSerializer = new XmlSerializer(typeof(PublishingXml));
+            using (var nodeReader = new XmlNodeReader(xmlFeedData))
+            {
+                publishingXml = (PublishingXml)xmlSerializer.Deserialize(nodeReader);
+            }
+        }
+
+        //public PublishingXml GetPublishingStories(string xmlFeedUri)
         //{
-        //    var publishedStories = new Publishing();
+        //    if (!string.IsNullOrEmpty(xmlFeedUri))
+        //    {
+        //        if (!Uri.IsWellFormedUriString(xmlFeedUri, UriKind.RelativeOrAbsolute))
+        //        {
+        //            // uri doesn't look valid
+        //            // log this
+        //            return publishingXml;
+        //        }
 
-        //    // use HttpRequest to call the URL
-        //    // consume the xml data
-        //    // inflate the entity
-        //    // loop through the stories and add story to the Publishing collection
+        //        ProcessXmlFeed(xmlFeedUri);
+        //    }
 
-        //    return publishedStories;
+        //    return publishingXml;
         //}
     }
 }

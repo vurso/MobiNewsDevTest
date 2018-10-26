@@ -10,7 +10,7 @@ using System.Web.Services;
 
 namespace MockXmlFeedService
 {
-    public class XmlFeedService
+    public class XmlFeedService : IXmlFeedService
     {
         private XmlDocument mockXmlData;
 

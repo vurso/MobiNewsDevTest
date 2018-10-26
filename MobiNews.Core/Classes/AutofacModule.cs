@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobiNews.Test.Classes
+namespace MobiNews.Core.Classes
 {
     public static class AutofacModule
     {
@@ -16,10 +16,8 @@ namespace MobiNews.Test.Classes
             var builder = new ContainerBuilder();
 
             // register any types here
-            builder.RegisterType<XmlFtpDataHandler>().As<IXmlFtpDataHandler>();
+            //builder.RegisterType<XmlFtpDataHandler>().As<IXmlFtpDataHandler>();
             builder.RegisterType<XmlFeedProvider>().As<IXmlFeedProvider>();
-            builder.RegisterType<XMLFeedDataHandler>().As<IXMLFeedDataHandler>();
-            builder.RegisterType<XmlFeedService>().As<IXmlFeedService>();
 
             return builder.Build();
         }
