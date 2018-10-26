@@ -1,0 +1,77 @@
+﻿@model MobiNews.MvcUI.Models.SupplierModel
+
+<h3>@ViewBag.Message</h3>
+
+<div class="jumbotron">
+    <h1>Story Manager</h1>
+    <p class="lead">Load story data from feed or FTP location.</p>
+</div>
+
+<div class="row">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <legend>Fetch data</legend>
+
+            <div class="form-group">
+                <div class="dropdown">
+                    @Html.DropDownListFor(x => Model.SupplierId,
+                   new SelectList(Model.Suppliers, "SupplierId", "SupplierName"), " - Please Select -", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="tbFeedUrl">Feed URL</label>
+                <input id="tbFeedUrl" name="tbFeedUrl" type="text" placeholder="The xml feed path" class="form-control input-md">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="btnGetFeedData"></label>
+                <button id="btnGetFeedData" name="btnGetFeedData" class="btn btn-primary">Get Feed Data</button>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+
+<div class="row">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <div class="form-group">
+                <label class="control-label" for="tbFtpPath">FTP Path</label>
+                <input id="tbFeedUrl" name="tbFtpPath" type="text" placeholder="The ftp directory path" class="form-control input-md">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="btnGetFtpData"></label>
+                <button id="btnGetFeedData" name="btnGetFtpData" class="btn btn-primary">Get FTP Data</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div class="clearfix"></div>
+
+@section Scripts{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var id = 0;
+
+            $(document).on('click', '.btnGetFeedData', function () {
+                if ($("#tbFeedUrl").val() != "") {
+                    $(this).load("@Url.Action("GetFeedData")", {
+                        SupplierName: $("#tbFeedUrl").val()
+                    });
+
+                    window.location.reload(true);
+                }
+            });
+
+            $(document).on('click', '.btnEdit', function () {
+                alert("sorry not implemented yet, can't do that much in 2 hours!");
+            });
+        });
+    </script>
+}

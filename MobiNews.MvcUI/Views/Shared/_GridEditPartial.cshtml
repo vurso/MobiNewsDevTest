@@ -1,0 +1,17 @@
+﻿@model MobiNews.MvcUI.Models.SupplierModel
+
+@using (Ajax.BeginForm("UpdateSupplier", "Home", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "result" }))
+{
+    <div class="form-group">
+        <label for="name">Supplier Name</label>
+        @Html.TextBoxFor(tb => tb.SupplierName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="notificationUrl">Notification URL</label>
+        @Html.TextBoxFor(tb => tb.NotificationUrl, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+}
+
+<div id="result"></div>
