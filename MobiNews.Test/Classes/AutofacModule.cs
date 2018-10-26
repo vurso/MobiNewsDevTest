@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using mobiNews.Service.Services;
 using MobiNews.Core.Handlers;
 using MockXmlFeedService;
 using System;
@@ -20,6 +21,7 @@ namespace MobiNews.Test.Classes
             builder.RegisterType<XmlFeedProvider>().As<IXmlFeedProvider>();
             builder.RegisterType<XMLFeedDataHandler>().As<IXMLFeedDataHandler>();
             builder.RegisterType<XmlFeedService>().As<IXmlFeedService>();
+            builder.RegisterType<NewStoryService>().As<INewStoryService>();
 
             return builder.Build();
         }

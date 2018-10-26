@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Classes\AutofacModule.cs" />
     <Compile Include="Integration Tests\MockXmlFeedServiceTests.cs" />
+    <Compile Include="Integration Tests\NewStoryServiceTests.cs" />
     <Compile Include="Integration Tests\XmlFeedDataHandlerTests.cs" />
     <Compile Include="Integration Tests\XmlFtpDataHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +78,10 @@
     <ProjectReference Include="..\MobiNews.Core\MobiNews.Core.csproj">
       <Project>{B978FBF5-B5B4-42F0-946D-578F52EC089E}</Project>
       <Name>MobiNews.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mobiNews.Service\mobiNews.Service.csproj">
+      <Project>{CE74DB54-F108-43AD-80C1-CA26E8BC4533}</Project>
+      <Name>mobiNews.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\MockXmlFeedService\MockXmlFeedService.csproj">
       <Project>{4E0FB6D5-5CB4-4A76-A0C0-EEFED3C320A3}</Project>

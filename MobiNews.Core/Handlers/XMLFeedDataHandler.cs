@@ -62,22 +62,5 @@ namespace MobiNews.Core.Handlers
                 publishingXml = (PublishingXml)xmlSerializer.Deserialize(nodeReader);
             }
         }
-
-        //public PublishingXml GetPublishingStories(string xmlFeedUri)
-        //{
-        //    if (!string.IsNullOrEmpty(xmlFeedUri))
-        //    {
-        //        if (!Uri.IsWellFormedUriString(xmlFeedUri, UriKind.RelativeOrAbsolute))
-        //        {
-        //            // uri doesn't look valid
-        //            // log this
-        //            return publishingXml;
-        //        }
-
-        //        ProcessXmlFeed(xmlFeedUri);
-        //    }
-
-        //    return publishingXml;
-        //}
     }
 }

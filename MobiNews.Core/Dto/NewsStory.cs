@@ -8,7 +8,7 @@ namespace MobiNews.Core.Dto
 {
     public class NewsStory
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string TopTitle { get; set; }
         public string Body { get; set; }
         public string Imageloc { get; set; }

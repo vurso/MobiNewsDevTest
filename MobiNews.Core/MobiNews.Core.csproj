@@ -53,6 +53,7 @@
     <Compile Include="Entities\PublishingXml.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="Extensions\XmlFtpDataExtensions.cs" />
     <Compile Include="Handlers\XmlFtpDataHandler.cs" />
     <Compile Include="Handlers\XMLFeedDataHandler.cs" />
     <Compile Include="Handlers\XmlHandlerBase.cs" />
