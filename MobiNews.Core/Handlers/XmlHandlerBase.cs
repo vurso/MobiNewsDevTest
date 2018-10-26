@@ -13,6 +13,7 @@ namespace MobiNews.Core.Handlers
     {
         public readonly string FTPDIRPATHKEY = "FtpFolderPath";
         public readonly string IMAGEPATHKEY = "ServerImagePath";
+        public readonly string XMLFEEDURIKEY = "XmlFeedUriKey";
         public readonly string XMLEXTENSION = ".xml";
     }
 }

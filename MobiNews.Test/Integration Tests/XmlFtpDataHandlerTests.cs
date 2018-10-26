@@ -3,7 +3,6 @@ using System.IO;
 using Autofac;
 using FluentAssertions;
 using MobiNews.Core.Handlers;
-using MobiNews.Core.Interfaces;
 using MobiNews.Test.Classes;
 using NUnit.Framework;
 
@@ -13,7 +12,7 @@ namespace MobiNews.Test.Integration_Tests
     {
         private string xmlTestFile;
         private const string TESTID = "Apples_64";
-        private NewsStory _newsStory;
+        private NewsStoryXml _newsStory;
         private ILifetimeScope _scope;
         private IXmlFtpDataHandler _xmlFtpDataHandler;
 
@@ -43,7 +42,7 @@ namespace MobiNews.Test.Integration_Tests
         {
             _newsStory = _xmlFtpDataHandler.GetNewsStory(xmlTestFile);
 
-            _newsStory.Should().NotBeNull().And.BeOfType<NewsStory>();
+            _newsStory.Should().NotBeNull().And.BeOfType<NewsStoryXml>();
             _newsStory.Id.Should().NotBeNull().And.Match(TESTID);
         }
 

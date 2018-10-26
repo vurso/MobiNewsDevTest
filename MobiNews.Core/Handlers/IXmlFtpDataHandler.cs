@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobiNews.Core.Interfaces
+namespace MobiNews.Core.Handlers
 {
     public interface IXmlFtpDataHandler
     {
-        NewsStory GetNewsStory();
-        NewsStory GetNewsStory(string fileName);
+        NewsStoryXml GetNewsStory();
+        NewsStoryXml GetNewsStory(string fileName);
     }
 }

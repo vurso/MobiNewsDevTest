@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using MobiNews.Core.Handlers;
-using MobiNews.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

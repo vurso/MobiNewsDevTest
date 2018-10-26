@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobiNews.Core.Interfaces
+namespace MockXmlFeedService
 {
-    public interface IXMLFeed
+    public class XmlFeedService
     {
+        public void GetXmlFeed()
+        {
+
+        }
     }
 }

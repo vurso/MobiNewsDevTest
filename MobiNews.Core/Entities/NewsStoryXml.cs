@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 [Serializable]
 [XmlRoot(ElementName = "NewsStory", IsNullable = false)]
-public class NewsStory
+public class NewsStoryXml
 {
     [XmlElement("id")]
     public string Id { get; set; }

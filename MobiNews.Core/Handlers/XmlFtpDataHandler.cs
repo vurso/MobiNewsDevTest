@@ -1,5 +1,4 @@
 ﻿using MobiNews.Core.Extensions;
-using MobiNews.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,13 +13,13 @@ namespace MobiNews.Core.Handlers
 {
     public class XmlFtpDataHandler : XmlHandlerBase, IXmlFtpDataHandler
     {
-        private NewsStory newsStory;
+        private NewsStoryXml newsStory;
 
         public XmlFtpDataHandler()
         {
         }
 
-        public NewsStory GetNewsStory()
+        public NewsStoryXml GetNewsStory()
         {
             // get the directory path
             var directory = ConfigurationManager.AppSettings.Get(FTPDIRPATHKEY);
@@ -41,7 +40,7 @@ namespace MobiNews.Core.Handlers
             return newsStory;
         }
 
-        public NewsStory GetNewsStory(string fileName)
+        public NewsStoryXml GetNewsStory(string fileName)
         {
             ProcessFile(fileName);
 
@@ -65,10 +64,10 @@ namespace MobiNews.Core.Handlers
                 try
                 {
                     // its an XML file so get contents and inflate the entity
-                    var xmlSerializer = new XmlSerializer(typeof(NewsStory));
+                    var xmlSerializer = new XmlSerializer(typeof(NewsStoryXml));
                     using (var fs = new FileStream(fileName, FileMode.Open))
                     {
-                        newsStory = (NewsStory)xmlSerializer.Deserialize(fs);
+                        newsStory = (NewsStoryXml)xmlSerializer.Deserialize(fs);
                     }
 
                     //File.Delete(fileName);

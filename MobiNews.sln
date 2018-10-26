@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample XML data", "Sample X
 		..\publishing.xml = ..\publishing.xml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockXmlFeedService", "MockXmlFeedService\MockXmlFeedService.csproj", "{4E0FB6D5-5CB4-4A76-A0C0-EEFED3C320A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{DA5FA1D7-01EE-4A65-BAAD-0E1115011876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA5FA1D7-01EE-4A65-BAAD-0E1115011876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA5FA1D7-01EE-4A65-BAAD-0E1115011876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E0FB6D5-5CB4-4A76-A0C0-EEFED3C320A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0FB6D5-5CB4-4A76-A0C0-EEFED3C320A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E0FB6D5-5CB4-4A76-A0C0-EEFED3C320A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E0FB6D5-5CB4-4A76-A0C0-EEFED3C320A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
