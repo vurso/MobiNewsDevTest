@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AutofacModule.cs" />
+    <Compile Include="Integration Tests\Helpers\XmlFileBuilder.cs" />
     <Compile Include="Integration Tests\MockXmlFeedServiceTests.cs" />
     <Compile Include="Integration Tests\NewStoryServiceTests.cs" />
     <Compile Include="Integration Tests\XmlFeedDataHandlerTests.cs" />
