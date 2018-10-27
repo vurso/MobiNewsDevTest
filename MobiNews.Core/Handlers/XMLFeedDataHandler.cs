@@ -1,4 +1,5 @@
-﻿using MockXmlFeedService;
+﻿using MobiNews.Core.Extensions;
+using MockXmlFeedService;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -56,11 +57,13 @@ namespace MobiNews.Core.Handlers
             // using WebRequest to get a response from the provided Uri path
             var xmlFeedData = _xmlFeedService.GetXmlFeed();
 
-            var xmlSerializer = new XmlSerializer(typeof(PublishingXml));
-            using (var nodeReader = new XmlNodeReader(xmlFeedData))
-            {
-                publishingXml = (PublishingXml)xmlSerializer.Deserialize(nodeReader);
-            }
+            publishingXml = xmlFeedData.Deserialize<PublishingXml>();
+
+            //var xmlSerializer = new XmlSerializer(typeof(PublishingXml));
+            //using (var nodeReader = new XmlNodeReader(xmlFeedData))
+            //{
+            //    publishingXml = (PublishingXml)xmlSerializer.Deserialize(nodeReader);
+            //}
         }
     }
 }

@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
+[Serializable, XmlRoot(ElementName = "Publishing", Namespace = "http://mobinews.testing")]
 public class PublishingXml
 {
+    [XmlElement("publishingid")]
     public int PublishingId { get; set; }
-    public IEnumerable<PublishingStory> Stories { get; set; }
+    [XmlElement("stories")]
+    public PublishingStory [] Stories { get; set; }
 }
 
-[XmlRoot("story")]
+[Serializable, XmlRoot("story")]
 public class PublishingStory
 {
     [XmlElement("id")]
