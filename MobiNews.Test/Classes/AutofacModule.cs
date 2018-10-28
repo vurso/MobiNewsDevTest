@@ -21,7 +21,7 @@ namespace MobiNews.Test.Classes
             builder.RegisterType<XmlFeedProvider>().As<IXmlFeedProvider>();
             builder.RegisterType<XMLFeedDataHandler>().As<IXMLFeedDataHandler>();
             builder.RegisterType<XmlFeedService>().As<IXmlFeedService>();
-            builder.RegisterType<NewStoryService>().As<INewStoryService>();
+            builder.RegisterType<NewsStoryService>().As<INewStoryService>();
 
             return builder.Build();
         }

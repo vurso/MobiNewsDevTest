@@ -21,7 +21,7 @@ namespace MobiNews.MvcUI.Classes
 
             builder.RegisterType<SupplierService>().As<ISupplierService>();
             builder.RegisterType<SupplierRepository>().As<ISupplierRepository>();
-            builder.RegisterType<NewStoryService>().As<INewStoryService>();
+            builder.RegisterType<NewsStoryService>().As<INewStoryService>();
             builder.RegisterType<NewStoryRepository>().As<INewStoryRepository>();
             builder.RegisterType<MobiNewsContext>();
 

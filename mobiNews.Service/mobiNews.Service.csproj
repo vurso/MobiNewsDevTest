@@ -44,7 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\INewStoryService.cs" />
     <Compile Include="Services\ISupplierService.cs" />
-    <Compile Include="Services\NewStoryService.cs" />
+    <Compile Include="Services\NewsStoryService.cs" />
     <Compile Include="Services\SupplierService.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,11 +10,11 @@ using MobiNews.Core.Handlers;
 
 namespace mobiNews.Service.Services
 {
-    public class NewStoryService : INewStoryService
+    public class NewsStoryService : INewStoryService
     {
         private readonly IXmlFtpDataHandler _xmlFtpDataHandler;
 
-        public NewStoryService(IXmlFtpDataHandler xmlFtpDataHandler)
+        public NewsStoryService(IXmlFtpDataHandler xmlFtpDataHandler)
         {
             _xmlFtpDataHandler = xmlFtpDataHandler;
         }
@@ -24,24 +24,14 @@ namespace mobiNews.Service.Services
             throw new NotImplementedException();
         }
 
-        public void Delete(NewsStory newStory)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable GetNewStories()
-        {
-            throw new NotImplementedException();
-        }
-
-        public NewsStory GetNewStory(Func<NewsStory, bool> param)
-        {
-            throw new NotImplementedException();
-        }
-
         public NewsStory FetchNewsStory()
         {
             return _xmlFtpDataHandler.GetNewsStory().MapXmlDataToDto();
+        }
+
+        public NewsStory FetchNewsStory(string fileName)
+        {
+            return _xmlFtpDataHandler.GetNewsStory(fileName).MapXmlDataToDto();
         }
 
         public void Update(NewsStory newStory)
@@ -49,9 +39,9 @@ namespace mobiNews.Service.Services
             throw new NotImplementedException();
         }
 
-        public NewsStory FetchNewsStory(string fileName)
+        public void Delete(NewsStory newStory)
         {
-            return _xmlFtpDataHandler.GetNewsStory(fileName).MapXmlDataToDto();
+            throw new NotImplementedException();
         }
     }
 }
