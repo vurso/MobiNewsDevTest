@@ -35,6 +35,9 @@ namespace MobiNews.Test.Integration_Tests
             _publishingXml.Should().NotBeNull()
                 .And.BeOfType<PublishingXml>()
                 .Which.PublishingId.Equals(23);
+            _publishingXml.Should().NotBeNull()
+                .And.BeOfType<PublishingXml>()
+                .Which.Stories.Should().HaveCount(c => c > 0);
         }
     }
 }

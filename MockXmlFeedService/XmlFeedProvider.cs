@@ -42,15 +42,6 @@ namespace MockXmlFeedService
             var xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(sb.ToString());
 
-            // for testing purposes only
-            using (var stringWriter = new StringWriter())
-            using (var xmlTextWriter = XmlWriter.Create(stringWriter))
-            {
-                xmlDocument.WriteTo(xmlTextWriter);
-                xmlTextWriter.Flush();
-                var testXmlString = stringWriter.GetStringBuilder().ToString();
-            }
-
             return xmlDocument;
         }
     }

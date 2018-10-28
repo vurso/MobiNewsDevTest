@@ -7,7 +7,8 @@ public class PublishingXml
 {
     [XmlElement("publishingid")]
     public int PublishingId { get; set; }
-    [XmlElement("stories")]
+    [XmlArray("stories")]
+    [XmlArrayItem("story")]
     public PublishingStory [] Stories { get; set; }
 }
 

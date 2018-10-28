@@ -58,12 +58,6 @@ namespace MobiNews.Core.Handlers
             var xmlFeedData = _xmlFeedService.GetXmlFeed();
 
             publishingXml = xmlFeedData.Deserialize<PublishingXml>();
-
-            //var xmlSerializer = new XmlSerializer(typeof(PublishingXml));
-            //using (var nodeReader = new XmlNodeReader(xmlFeedData))
-            //{
-            //    publishingXml = (PublishingXml)xmlSerializer.Deserialize(nodeReader);
-            //}
         }
     }
 }
