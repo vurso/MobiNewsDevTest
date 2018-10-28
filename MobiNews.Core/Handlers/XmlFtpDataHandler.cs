@@ -88,7 +88,11 @@ namespace MobiNews.Core.Handlers
                     Directory.CreateDirectory(imageDirectory);
                 }
 
-                File.Copy(fileName, $"{imageDirectory}\\{fileName}");
+                var imagePath = $"{imageDirectory}\\{fileName}";
+
+                File.Copy(fileName, imagePath);
+
+                newsStory.Imageloc = imagePath;
 
                 // delete the existing file
                 File.Delete(fileName);

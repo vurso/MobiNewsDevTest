@@ -7,21 +7,35 @@ using System.Threading.Tasks;
 using MobiNews.Core.Dto;
 using MobiNews.Core.Extensions;
 using MobiNews.Core.Handlers;
+using MobiNews.Data.Models;
+using MobiNews.Data.Repositories;
 
 namespace mobiNews.Service.Services
 {
     public class NewsStoryService : INewStoryService
     {
         private readonly IXmlFtpDataHandler _xmlFtpDataHandler;
+        private readonly INewStoryRepository _newStoryRepository;
 
-        public NewsStoryService(IXmlFtpDataHandler xmlFtpDataHandler)
+        public NewsStoryService(IXmlFtpDataHandler xmlFtpDataHandler, INewStoryRepository newStoryRepository)
         {
             _xmlFtpDataHandler = xmlFtpDataHandler;
+            _newStoryRepository = newStoryRepository;
         }
 
-        public void Create(NewsStory newStory)
+        public void Create(NewsStory newsStory)
         {
-            throw new NotImplementedException();
+            var newStory = new NewStory()
+            {
+                Title = newsStory.TopTitle,
+                NewsStory = newsStory.Body,
+                ImagePath = newsStory.Imageloc,
+                SupplierID = newsStory.Supplier.SupplierId,
+                SupplierStoryRef = $"{newsStory.Id}",
+                AddedDateTime = DateTime.Now
+            };
+
+            _newStoryRepository.Create(newStory);
         }
 
         public NewsStory FetchNewsStory()
@@ -34,12 +48,12 @@ namespace mobiNews.Service.Services
             return _xmlFtpDataHandler.GetNewsStory(fileName).MapXmlDataToDto();
         }
 
-        public void Update(NewsStory newStory)
+        public void Update(NewsStory newsStory)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(NewsStory newStory)
+        public void Delete(NewsStory newsStory)
         {
             throw new NotImplementedException();
         }

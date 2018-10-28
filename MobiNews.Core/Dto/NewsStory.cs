@@ -12,5 +12,13 @@ namespace MobiNews.Core.Dto
         public string TopTitle { get; set; }
         public string Body { get; set; }
         public string Imageloc { get; set; }
+        public Supplier Supplier { get; set; }
+    }
+
+    public class Supplier
+    {
+        public int SupplierId { get; set; }
+        public string SupplierName { get; set; }
+        public string NotificationUrl { get; set; }
     }
 }

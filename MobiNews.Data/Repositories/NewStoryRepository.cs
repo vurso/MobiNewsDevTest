@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,10 @@ namespace MobiNews.Data.Repositories
 
         public void Create(NewStory newStory)
         {
-            throw new NotImplementedException();
+            Context.NewStories.Add(newStory);
+            Context.Entry(newStory).State = EntityState.Added;
+            Context.SaveChanges();
+
         }
 
         public void Delete(NewStory newStory)
