@@ -14,28 +14,30 @@ namespace MockXmlFeedService
         public XmlDocument GenerateMockXmlFeedData()
         {
             var sb = new StringBuilder();
-            var xw = XmlWriter.Create(sb);
+            var xmlWriterSettings = new XmlWriterSettings();
+            xmlWriterSettings.Encoding = Encoding.UTF8;
+            var xmlWriter = XmlWriter.Create(sb);
 
-            xw.WriteStartDocument();
-            xw.WriteStartElement("publishing");
-            xw.WriteElementString("publishingid", "23");
-            xw.WriteStartElement("stories");
-            xw.WriteStartElement("story");
-            xw.WriteElementString("id", "2654");
-            xw.WriteElementString("title", "The PM moves out of number 10");
-            xw.WriteElementString("newstoryText", "he Mayor of London has forced the PM out of number 10 claiming \"the rent hasn't been paid in years\"");
-            xw.WriteElementString("image", "https://picsum.photos/200/300/?image=197");
-            xw.WriteEndElement();
-            xw.WriteStartElement("story");
-            xw.WriteElementString("id", "2655");
-            xw.WriteElementString("title", "North and South Korea at Peace");
-            xw.WriteElementString("newstoryText", "The Supreme Leader has had a change of heart after stubbing his toe on a missile and realising it's probably better if we're all friends.");
-            xw.WriteElementString("image", "https://picsum.photos/200/300/?image=198");
-            xw.WriteEndElement();
-            xw.WriteEndElement();
-            xw.WriteEndElement();
-            xw.WriteEndDocument();
-            xw.Flush();
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("publishing");
+            xmlWriter.WriteElementString("publishingid", "23");
+            xmlWriter.WriteStartElement("stories");
+            xmlWriter.WriteStartElement("story");
+            xmlWriter.WriteElementString("id", "2654");
+            xmlWriter.WriteElementString("title", "The PM moves out of number 10");
+            xmlWriter.WriteElementString("newstoryText", "he Mayor of London has forced the PM out of number 10 claiming \"the rent hasn't been paid in years\"");
+            xmlWriter.WriteElementString("image", "https://picsum.photos/200/300/?image=197");
+            xmlWriter.WriteEndElement();
+            xmlWriter.WriteStartElement("story");
+            xmlWriter.WriteElementString("id", "2655");
+            xmlWriter.WriteElementString("title", "North and South Korea at Peace");
+            xmlWriter.WriteElementString("newstoryText", "The Supreme Leader has had a change of heart after stubbing his toe on a missile and realising it's probably better if we're all friends.");
+            xmlWriter.WriteElementString("image", "https://picsum.photos/200/300/?image=198");
+            xmlWriter.WriteEndElement();
+            xmlWriter.WriteEndElement();
+            xmlWriter.WriteEndElement();
+            xmlWriter.WriteEndDocument();
+            xmlWriter.Flush();
 
             var xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(sb.ToString());

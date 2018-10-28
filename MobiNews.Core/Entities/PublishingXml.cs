@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-[Serializable, XmlRoot(ElementName = "Publishing", Namespace = "http://mobinews.testing")]
+[Serializable, XmlRoot("publishing")]
 public class PublishingXml
 {
     [XmlElement("publishingid")]
