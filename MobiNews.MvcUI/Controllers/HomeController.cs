@@ -1,5 +1,6 @@
 ﻿using mobiNews.Service.Services;
 using MobiNews.Data.Models;
+using MobiNews.MvcUI.Classes.Extensions;
 using MobiNews.MvcUI.Models;
 using System;
 using System.Collections.Generic;
@@ -13,15 +14,26 @@ namespace MobiNews.MvcUI.Controllers
     public class HomeController : Controller
     {
         private ISupplierService _supplierService;
+        private IStoriesService _storiesService;
 
-        public HomeController(ISupplierService supplierService)
+        public HomeController(ISupplierService supplierService, IStoriesService storiesService)
         {
             _supplierService = supplierService;
+            _storiesService = storiesService;
         }
 
         public ActionResult Index()
         {
-            return View();
+            var model = new NewStoriesModel();
+
+            var stories = _storiesService.GetStories();
+
+            if(stories != null)
+            {
+                model.Stories = stories.MapNewStoriesToStories();
+            }
+
+            return View(model);
         }
 
         public ActionResult Suppliers(int? pageNumber)
