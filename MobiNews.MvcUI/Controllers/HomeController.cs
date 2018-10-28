@@ -26,7 +26,7 @@ namespace MobiNews.MvcUI.Controllers
         {
             var model = new NewStoriesModel();
 
-            var stories = _storiesService.GetStories();
+            var stories = _storiesService.GetStories().ToList();
 
             if(stories != null)
             {

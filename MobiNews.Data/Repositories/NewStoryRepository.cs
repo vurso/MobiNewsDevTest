@@ -26,9 +26,9 @@ namespace MobiNews.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable GetNewStories()
+        public IEnumerable<NewStory> GetNewStories()
         {
-            throw new NotImplementedException();
+            return Context.NewStories;
         }
 
         public NewStory GetNewStory(Func<NewStory, bool> param)

@@ -1,6 +1,7 @@
 ﻿using MobiNews.Data.Models;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace MobiNews.Data.Repositories
 {
@@ -8,7 +9,7 @@ namespace MobiNews.Data.Repositories
     {
         void Create(NewStory newStory);
         NewStory GetNewStory(Func<NewStory, bool> param);
-        IEnumerable GetNewStories();
+        IEnumerable<NewStory> GetNewStories();
         void Update(NewStory newStory);
         void Delete(NewStory newStory);
     }
