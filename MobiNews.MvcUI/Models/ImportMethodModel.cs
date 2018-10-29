@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MobiNews.MvcUI.Models
 {
-    public class ImportTypeModel
+    public class ImportMethodModel
     {
         public List<ImportMethods> ImportMethods { get; set; }
     }

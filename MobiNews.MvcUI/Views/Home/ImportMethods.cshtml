@@ -1,4 +1,4 @@
-﻿@model MobiNews.MvcUI.Models.ImportTypeModel
+﻿@model MobiNews.MvcUI.Models.ImportMethodModel
 
 <h3>@ViewBag.Message</h3>
 
@@ -36,16 +36,15 @@
 <h3>Add New Import Method:</h3>
 <div class="row">
     <div class="container">
-        <h1>TODO</h1>
-        @*<div class="form-group">
-            <label for="name">Supplier Name</label>
-            @Html.TextBoxFor(tb => tb.SupplierName, new { @class = "form-control" })
+        <div class="form-group">
+            <label for="name">Name</label>
+            @Html.TextBoxFor(tb => tb.ImportMethods.FirstOrDefault().Name, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="notificationUrl">Notification URL</label>
-            @Html.TextBoxFor(tb => tb.NotificationUrl, new { @class = "form-control" })
+            <label for="importType">Import Type</label>
+            @Html.TextBoxFor(tb => tb.ImportMethods.FirstOrDefault().ImportType, new { @class = "form-control" })
         </div>
-        <button type="button" class="btn btn-primary btnAddSupplier">Add Supplier</button>*@
+        <button type="button" class="btn btn-primary btnAddSupplier">Add Supplier</button>
     </div>
 </div>
 <div class="clearfix"></div>

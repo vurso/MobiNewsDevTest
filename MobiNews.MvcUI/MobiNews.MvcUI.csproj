@@ -178,7 +178,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ImportTypeModel.cs" />
+    <Compile Include="Models\ImportMethodModel.cs" />
     <Compile Include="Models\NewStoriesModel.cs" />
     <Compile Include="Models\SupplierModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

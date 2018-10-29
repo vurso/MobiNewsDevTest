@@ -142,7 +142,7 @@ namespace MobiNews.MvcUI.Controllers
             ViewBag.Message = "";
 
             // TODO: read JSON file and inflate the Import Type view model
-            var model = new ImportTypeModel()
+            var model = new ImportMethodModel()
             {
                 ImportMethods = new List<ImportMethods>()
             };
