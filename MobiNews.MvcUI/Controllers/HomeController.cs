@@ -137,7 +137,7 @@ namespace MobiNews.MvcUI.Controllers
             return View();
         }
 
-        public ActionResult StoryManager()
+        public ActionResult ImportMethods()
         {
             ViewBag.Message = "";
 
