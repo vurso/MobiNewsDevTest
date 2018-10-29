@@ -141,11 +141,10 @@ namespace MobiNews.MvcUI.Controllers
         {
             ViewBag.Message = "";
 
-            var suppliers = _supplierService.GetSuppliers();
-
-            var model = new SupplierModel
+            // TODO: read JSON file and inflate the Import Type view model
+            var model = new ImportTypeModel()
             {
-                Suppliers = suppliers.ToList()
+                ImportMethods = new List<ImportMethods>()
             };
 
             return View(model);

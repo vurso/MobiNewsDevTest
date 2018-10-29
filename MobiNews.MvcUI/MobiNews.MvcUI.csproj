@@ -178,6 +178,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ImportTypeModel.cs" />
     <Compile Include="Models\NewStoriesModel.cs" />
     <Compile Include="Models\SupplierModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -237,6 +238,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="importMethods.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -285,6 +287,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MobiNews.Core\MobiNews.Core.csproj">
+      <Project>{B978FBF5-B5B4-42F0-946D-578F52EC089E}</Project>
+      <Name>MobiNews.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MobiNews.Data\MobiNews.Data.csproj">
       <Project>{36184628-C2AD-4C7E-91E7-DE8259A1ACBF}</Project>
       <Name>MobiNews.Data</Name>
