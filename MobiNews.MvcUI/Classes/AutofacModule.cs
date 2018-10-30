@@ -24,7 +24,7 @@ namespace MobiNews.MvcUI.Classes
             builder.RegisterType<NewsStoryService>().As<INewStoryService>();
             builder.RegisterType<NewStoryRepository>().As<INewStoryRepository>();
             builder.RegisterType<StoriesService>().As<IStoriesService>();
-            builder.RegisterType<MobiNewsContext>();
+            builder.RegisterType<MobiNewsContext>().AsSelf();
 
             var container = builder.Build();
 
