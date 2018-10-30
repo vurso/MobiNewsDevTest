@@ -16,7 +16,6 @@ namespace MobiNews.Core.Classes
             var builder = new ContainerBuilder();
 
             // register any types here
-            //builder.RegisterType<XmlFtpDataHandler>().As<IXmlFtpDataHandler>();
             builder.RegisterType<XmlFeedProvider>().As<IXmlFeedProvider>();
 
             return builder.Build();

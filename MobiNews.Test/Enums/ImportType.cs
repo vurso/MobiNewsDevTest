@@ -1,4 +1,4 @@
-﻿namespace MobiNews.Core.Enums
+﻿namespace MobiNews.Test.Enums
 {
     public enum ImportType
     {
