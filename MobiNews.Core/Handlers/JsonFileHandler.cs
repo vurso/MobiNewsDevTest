@@ -35,5 +35,22 @@ namespace MobiNews.Core.Handlers
 
             return result;
         }
+
+        public void WriteJsonFile<T>(T jsonData, string filePath)
+        {
+            if(File.Exists(filePath))
+            {
+                try
+                {
+                    var jsonString = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
+
+                    File.WriteAllText(filePath, jsonString);
+                }
+                catch(Exception)
+                {
+                    // log this
+                }
+            }
+        }
     }
 }
