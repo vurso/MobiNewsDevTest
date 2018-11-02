@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using mobiNews.Service.Services;
+using MobiNews.Core.Handlers;
 using MobiNews.Data;
 using MobiNews.Data.Repositories;
 using MobiNews.Web.Helpers;
@@ -27,6 +28,7 @@ namespace MobiNews.MvcUI.Classes
             builder.RegisterType<StoriesService>().As<IStoriesService>();
             builder.RegisterType<MobiNewsContext>().AsSelf();
             builder.RegisterType<ImportMethodHelper>().As<IImportMethodHelper>();
+            builder.RegisterType<JsonFileHandler>().As<IJsonFileHandler>();
 
             var container = builder.Build();
 

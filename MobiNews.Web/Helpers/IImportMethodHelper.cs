@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobiNews.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace MobiNews.Web.Helpers
     {
         IEnumerable<SelectListItem> GetImportTypes();
         IEnumerable<SelectListItem> GetSelectListItemFromEnum<T>();
+        ImportMethodsJson LoadImportMethods();
     }
 }

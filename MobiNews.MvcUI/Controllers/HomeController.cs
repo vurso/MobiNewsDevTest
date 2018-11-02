@@ -147,12 +147,26 @@ namespace MobiNews.MvcUI.Controllers
         {
             ViewBag.Message = "";
 
-            // TODO: read JSON file and inflate the Import Type view model
-            var model = new ImportMethodModel()
+            var model = new ImportMethodModel();
+
+            var importMethodsData = _importMethodHelper.LoadImportMethods();
+
+            if(importMethodsData != null && importMethodsData.importMethods.Count() > 0)
             {
-                ImportMethods = new List<ImportMethods>(),
-                ImportTypes = _importMethodHelper.GetSelectListItemFromEnum<ImportType>().ToList()
-            };
+                model = new ImportMethodModel()
+                {
+                    ImportMethods = importMethodsData.importMethods.MapJsonImportMethodsToModel().ToList(),
+                    ImportTypes = _importMethodHelper.GetSelectListItemFromEnum<ImportType>().ToList()
+                };
+            }
+            else
+            {
+                model = new ImportMethodModel()
+                {
+                    ImportMethods = new List<ImportMethods>(),
+                    ImportTypes = _importMethodHelper.GetSelectListItemFromEnum<ImportType>().ToList()
+                };
+            }
 
             return View(model);
         }

@@ -1,6 +1,10 @@
-﻿using MobiNews.Core.Enums;
+﻿using MobiNews.Core.Entities;
+using MobiNews.Core.Enums;
+using MobiNews.Core.Handlers;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +14,14 @@ namespace MobiNews.Web.Helpers
 {
     public class ImportMethodHelper : IImportMethodHelper
     {
+        private readonly IJsonFileHandler _jsonFileHandler;
+        private const string IMPORTMETHODSJSONFILE = "ImportMethodsJsonFileName";
+
+        public ImportMethodHelper(IJsonFileHandler jsonFileHandler)
+        {
+            _jsonFileHandler = jsonFileHandler;
+        }
+
         public IEnumerable<SelectListItem> GetImportTypes()
         {
             var importTypesList = new List<SelectListItem>();
@@ -44,6 +56,30 @@ namespace MobiNews.Web.Helpers
             }
 
             return importTypesList;
+        }
+
+        public ImportMethodsJson LoadImportMethods()
+        {
+            ImportMethodsJson loadedImportMethods = null;
+
+            var appBaseDir = AppDomain.CurrentDomain.BaseDirectory;
+            if (Directory.Exists(appBaseDir))
+            {
+                try
+                {
+                    var filePath = Path.Combine(appBaseDir, ConfigurationManager.AppSettings.Get(IMPORTMETHODSJSONFILE));
+                    if (File.Exists(filePath))
+                    {
+                        loadedImportMethods = _jsonFileHandler.LoadJsonFile<ImportMethodsJson>(filePath);
+                    }
+                }
+                catch(FileLoadException)
+                {
+                    // log this
+                }
+            }
+
+            return loadedImportMethods;
         }
     }
 }

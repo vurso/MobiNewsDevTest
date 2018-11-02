@@ -1,13 +1,13 @@
 {
   "importMethods": [
     {
-      "Id": 0,
-      "Name": "",
-      "ImportType": 0,
+      "Id": 1,
+      "Name": "XmlFeed",
+      "ImportType": 1,
       "Parameters": [
         {
-          "Name": "",
-          "Param": ""
+          "Name": "Endpoint",
+          "Param": "http://testfeed.localhost/Feed"
         }
       ]
     }

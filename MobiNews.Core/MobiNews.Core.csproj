@@ -52,7 +52,7 @@
     <Compile Include="Classes\AutofacModule.cs" />
     <Compile Include="Dto\NewsStory.cs" />
     <Compile Include="Dto\Publishing.cs" />
-    <Compile Include="Entities\importMethodsJson.cs" />
+    <Compile Include="Entities\ImportMethodsJson.cs" />
     <Compile Include="Entities\NewsStoryXml.cs" />
     <Compile Include="Entities\PublishingXml.cs" />
     <Compile Include="Enums\ImportType.cs" />
