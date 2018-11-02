@@ -8,6 +8,7 @@ using Autofac.Integration.Mvc;
 using mobiNews.Service.Services;
 using MobiNews.Data;
 using MobiNews.Data.Repositories;
+using MobiNews.Web.Helpers;
 
 namespace MobiNews.MvcUI.Classes
 {
@@ -25,6 +26,7 @@ namespace MobiNews.MvcUI.Classes
             builder.RegisterType<NewStoryRepository>().As<INewStoryRepository>();
             builder.RegisterType<StoriesService>().As<IStoriesService>();
             builder.RegisterType<MobiNewsContext>().AsSelf();
+            builder.RegisterType<ImportMethodHelper>().As<IImportMethodHelper>();
 
             var container = builder.Build();
 

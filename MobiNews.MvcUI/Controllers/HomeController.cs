@@ -1,7 +1,9 @@
 ﻿using mobiNews.Service.Services;
+using MobiNews.Core.Enums;
 using MobiNews.Data.Models;
 using MobiNews.MvcUI.Classes.Extensions;
 using MobiNews.MvcUI.Models;
+using MobiNews.Web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,11 +17,15 @@ namespace MobiNews.MvcUI.Controllers
     {
         private ISupplierService _supplierService;
         private IStoriesService _storiesService;
+        private IImportMethodHelper _importMethodHelper;
 
-        public HomeController(ISupplierService supplierService, IStoriesService storiesService)
+        public HomeController(ISupplierService supplierService, 
+            IStoriesService storiesService, 
+            IImportMethodHelper importMethodHelper)
         {
             _supplierService = supplierService;
             _storiesService = storiesService;
+            _importMethodHelper = importMethodHelper;
         }
 
         public ActionResult Index()
@@ -144,7 +150,8 @@ namespace MobiNews.MvcUI.Controllers
             // TODO: read JSON file and inflate the Import Type view model
             var model = new ImportMethodModel()
             {
-                ImportMethods = new List<ImportMethods>()
+                ImportMethods = new List<ImportMethods>(),
+                ImportTypes = _importMethodHelper.GetSelectListItemFromEnum<ImportType>().ToList()
             };
 
             return View(model);

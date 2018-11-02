@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace MobiNews.MvcUI.Models
 {
     public class ImportMethodModel
     {
         public List<ImportMethods> ImportMethods { get; set; }
+        public List<SelectListItem> ImportTypes { get; set; }
     }
 
     public class ImportMethods

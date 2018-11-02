@@ -14,7 +14,7 @@ namespace MobiNews.Web.Helpers
         {
             var importTypesList = new List<SelectListItem>();
 
-            var importTypeEnumValues = Enum.GetNames(typeof(ImportType)).ToList(); //(ImportType[])Enum.GetValues(typeof(ImportType));
+            var importTypeEnumValues = Enum.GetNames(typeof(ImportType)).ToList();
 
             foreach (var importType in importTypeEnumValues)
             {
