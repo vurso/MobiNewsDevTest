@@ -157,6 +157,11 @@ namespace MobiNews.MvcUI.Controllers
             return View(model);
         }
 
+        public ActionResult AddImportMethod(ImportMethodModel model)
+        {
+            // TODO: add import method to JSON file
 
+            return View(model);
+        }
     }
 }

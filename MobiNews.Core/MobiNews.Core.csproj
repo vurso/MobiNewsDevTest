@@ -34,6 +34,9 @@
     <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -49,6 +52,7 @@
     <Compile Include="Classes\AutofacModule.cs" />
     <Compile Include="Dto\NewsStory.cs" />
     <Compile Include="Dto\Publishing.cs" />
+    <Compile Include="Entities\importMethodsJson.cs" />
     <Compile Include="Entities\NewsStoryXml.cs" />
     <Compile Include="Entities\PublishingXml.cs" />
     <Compile Include="Enums\ImportType.cs" />
@@ -57,6 +61,9 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\XmlFeedDataExtensions.cs" />
     <Compile Include="Extensions\XmlFtpDataExtensions.cs" />
+    <Compile Include="Handlers\IJsonFileHandler.cs" />
+    <Compile Include="Handlers\JsonFileHandler.cs" />
+    <Compile Include="Handlers\JsonHandlerBase.cs" />
     <Compile Include="Handlers\XmlFtpDataHandler.cs" />
     <Compile Include="Handlers\XMLFeedDataHandler.cs" />
     <Compile Include="Handlers\XmlHandlerBase.cs" />
