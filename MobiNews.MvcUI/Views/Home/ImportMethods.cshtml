@@ -37,12 +37,15 @@
 <div class="row">
     <div class="container">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Name:</label>
             @Html.TextBoxFor(tb => tb.ImportMethods.FirstOrDefault().Name, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="importType">Import Type</label>
-            @Html.TextBoxFor(tb => tb.ImportMethods.FirstOrDefault().ImportType, new { @class = "form-control" })
+            <label for="importType">Import type:</label>
+            <div class="dropdown">
+                @Html.DropDownListFor(x => Model.ImportTypes,
+               new SelectList(Model.ImportTypes, "Value", "Text"), " - Please Select -", new { @class = "form-control" })
+            </div>
         </div>
         <button type="button" class="btn btn-primary btnAddImportMethod">Add Import Method</button>
     </div>
