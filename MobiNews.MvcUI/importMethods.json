@@ -6,8 +6,12 @@
       "ImportType": 1,
       "Parameters": [
         {
-          "Name": "Endpoint",
-          "Param": "http://testfeed.localhost/Feed"
+          "Name": "Live_Endpoint",
+          "Param": "http://livefeed.localhost/Feed"
+        },
+        {
+          "Name": "Test_Endpoint",
+          "Param": "http://testfeed.localhost/feed"
         }
       ]
     }

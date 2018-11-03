@@ -25,7 +25,7 @@
                     <th scope="row">@importMethod.Id</th>
                     <td>@importMethod.Name</td>
                     <td>@importMethod.ImportType</td>
-                    <td>@importMethod.ListParametersHtmlFormat</td>
+                    <td>@Html.Raw(@importMethod.ListParametersHtmlFormat)</td>
                     <td><a data-value="@importMethod.Id" href="javascript:void(0)" class="btnEdit">Edit</a></td>
                 </tr>
             }
