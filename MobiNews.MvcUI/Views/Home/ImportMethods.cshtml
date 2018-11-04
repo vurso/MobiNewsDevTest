@@ -54,19 +54,15 @@
                 <div class="col-md-8 pull-left">
                     <label for="paramters">Add new parameter:</label>
                     <div class="input-group">
-                        <div class="col-md-4 pull-left">Name: <input name="paramName" class="form-control" /></div>
-                        <div class="col-md-4 pull-left">Value: <input name="paramValue" class="form-control" /></div>
-                        <div class="col-md-4 pull-left"><br /><button type="button" class="btn btn-info">Add..</button></div>
+                        <div class="col-md-4 pull-left">Name: <input id="paramName" class="form-control" /></div>
+                        <div class="col-md-4 pull-left">Value: <input id="paramValue" class="form-control" /></div>
+                        <div class="col-md-4 pull-left"><br /><button type="button" class="btn btn-info btnAddParam">Add..</button></div>
                     </div>
                 </div>
                 <div class="col-md-4 pull-left">
                     <label for="paramters">Parameters:</label>
                     <div class="col-md-12" id="parametersList">
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                        </ul>
+                        <ul></ul>
                     </div>
                 </div>
             </div>
@@ -93,7 +89,21 @@
             });
 
             $(document).on('click', '.btnEdit', function () {
-                alert("sorry not implemented yet, can't do that much in 2 hours!");
+                alert("sorry not implemented yet!");
+            });
+
+            $(document).on('click', '.btnAddParam', function () {
+                if ($("#paramName").val() != "" && $("#paramValue").val() != "") {
+
+                    $("#parametersList ul").append("<li>Name: "
+                        + $("#paramName").val()
+                        + ", Parameter: "
+                        + $("#paramValue").val()
+                        + "</li>");
+
+                    $("#paramName").val("");
+                    $("#paramValue").val("");
+                }
             });
         });
 
