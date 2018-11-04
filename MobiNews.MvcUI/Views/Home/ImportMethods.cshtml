@@ -36,24 +36,38 @@
 <h3>Add New Import Method:</h3>
 <div class="row">
     <div class="container">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            @Html.TextBoxFor(tb => tb.ImportMethods.FirstOrDefault().Name, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label for="importType">Import type:</label>
-            <div class="dropdown">
-                @Html.DropDownListFor(x => Model.ImportTypes,
-               new SelectList(Model.ImportTypes, "Value", "Text"), " - Please Select -", new { @class = "form-control" })
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                @Html.TextBoxFor(tb => tb.ImportMethods.FirstOrDefault().Name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="importType">Import type:</label>
+                <div class="dropdown">
+                    @Html.DropDownListFor(x => Model.ImportTypes,
+                   new SelectList(Model.ImportTypes, "Value", "Text"), " - Please Select -", new { @class = "form-control" })
+                </div>
             </div>
         </div>
-        <div class="well">
+        <div class="col-md-9 well">
             <div class="row">
-                <label for="paramters">Parameters:</label>
-                <div class="input-group">
-                    <div class="col-md-4 pull-left">Name: <input name="paramName" class="form-control" /></div>
-                    <div class="col-md-4 pull-left">Value: <input name="paramValue" class="form-control" /></div>
-                    <div class="col-md-4 pull-left"><br/><button type="button" class="btn btn-info">Add..</button></div>
+                <div class="col-md-8 pull-left">
+                    <label for="paramters">Add new parameter:</label>
+                    <div class="input-group">
+                        <div class="col-md-4 pull-left">Name: <input name="paramName" class="form-control" /></div>
+                        <div class="col-md-4 pull-left">Value: <input name="paramValue" class="form-control" /></div>
+                        <div class="col-md-4 pull-left"><br /><button type="button" class="btn btn-info">Add..</button></div>
+                    </div>
+                </div>
+                <div class="col-md-4 pull-left">
+                    <label for="paramters">Parameters:</label>
+                    <div class="col-md-12" id="parametersList">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
