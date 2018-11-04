@@ -10,13 +10,13 @@ namespace MobiNews.MvcUI.Classes.Extensions
 {
     public static class ImportMethodsExtensions
     {
-        public static IEnumerable<ImportMethods> MapJsonImportMethodsToModel( this Importmethod[] inportMethodsJsonData)
+        public static IEnumerable<ImportMethod> MapJsonImportMethodsToModel( this Importmethod[] inportMethodsJsonData)
         {
-            List<ImportMethods> importMethods = new List<ImportMethods>();
+            List<ImportMethod> importMethods = new List<ImportMethod>();
 
             foreach(var importMethodJsonData in inportMethodsJsonData)
             {
-                importMethods.Add(new ImportMethods()
+                importMethods.Add(new ImportMethod()
                 {
                     Id = importMethodJsonData.Id,
                     Name = importMethodJsonData.Name,

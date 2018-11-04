@@ -163,7 +163,7 @@ namespace MobiNews.MvcUI.Controllers
             {
                 model = new ImportMethodModel()
                 {
-                    ImportMethods = new List<ImportMethods>(),
+                    ImportMethods = new List<ImportMethod>(),
                     ImportTypes = _importMethodHelper.GetSelectListItemFromEnum<ImportType>().ToList()
                 };
             }

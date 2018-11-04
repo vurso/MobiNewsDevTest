@@ -9,11 +9,12 @@ namespace MobiNews.MvcUI.Models
 {
     public class ImportMethodModel
     {
-        public List<ImportMethods> ImportMethods { get; set; }
+        public ImportMethod ImportMethod { get; set; }
+        public List<ImportMethod> ImportMethods { get; set; }
         public List<SelectListItem> ImportTypes { get; set; }
     }
 
-    public class ImportMethods
+    public class ImportMethod
     {
         public int Id { get; set; }
         public string Name { get; set; }

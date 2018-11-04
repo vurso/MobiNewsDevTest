@@ -39,7 +39,7 @@
         <div class="col-md-3">
             <div class="form-group">
                 <label for="name">Name:</label>
-                @Html.TextBoxFor(tb => tb.ImportMethods.FirstOrDefault().Name, new { @class = "form-control" })
+                @Html.TextBoxFor(tb => tb.ImportMethod.Name, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label for="importType">Import type:</label>
@@ -95,9 +95,9 @@
             $(document).on('click', '.btnAddParam', function () {
                 if ($("#paramName").val() != "" && $("#paramValue").val() != "") {
 
-                    $("#parametersList ul").append("<li>Name: "
+                    $("#parametersList ul").append("<li><strong>Name</strong>: "
                         + $("#paramName").val()
-                        + ", Parameter: "
+                        + ", <strong>Parameter</strong>: "
                         + $("#paramValue").val()
                         + "</li>");
 
