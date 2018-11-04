@@ -1,6 +1,6 @@
 ﻿@model MobiNews.MvcUI.Models.ImportMethodModel
 
-<br/>
+<br />
 
 <div class="jumbotron">
     <h1>Configure import methods</h1>
@@ -47,6 +47,16 @@
                new SelectList(Model.ImportTypes, "Value", "Text"), " - Please Select -", new { @class = "form-control" })
             </div>
         </div>
+        <div class="well">
+            <div class="row">
+                <label for="paramters">Parameters:</label>
+                <div class="input-group">
+                    <div class="col-md-4 pull-left">Name: <input name="paramName" class="form-control" /></div>
+                    <div class="col-md-4 pull-left">Value: <input name="paramValue" class="form-control" /></div>
+                    <div class="col-md-4 pull-left"><br/><button type="button" class="btn btn-info">Add..</button></div>
+                </div>
+            </div>
+        </div>
         <button type="button" class="btn btn-primary btnAddImportMethod">Add Import Method</button>
     </div>
 </div>
@@ -72,5 +82,6 @@
                 alert("sorry not implemented yet, can't do that much in 2 hours!");
             });
         });
+
     </script>
 }
