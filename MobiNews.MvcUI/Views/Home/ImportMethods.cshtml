@@ -62,7 +62,7 @@
                 <div class="col-md-4 pull-left">
                     <label for="paramters">Parameters:</label>
                     <div class="col-md-12" id="parametersList">
-                        <ul></ul>
+                        <ul class="parameters"></ul>
                     </div>
                 </div>
             </div>
@@ -81,8 +81,7 @@
 
             $(document).on('click', '.btnAddImportMethod', function () {
                 $(this).load("@Url.Action("AddImportMethod")", {
-                    SupplierName: $("#SupplierName").val(),
-                    NotificationUrl: $("#NotificationUrl").val()
+                    Paramters: buildParametersJson()
                 });
 
                 window.location.reload(true);
@@ -92,12 +91,26 @@
                 alert("sorry not implemented yet!");
             });
 
+            function buildParametersJson() {
+
+                var parametersJsonStart = "[";
+                var paramtersJsonBody = "";
+                var parametersJsonEnd = "]";
+
+                $(".parameters li").each(function () {
+                    paramtersJsonBody += "{ Name: " + $(this).find("name").text()
+                        + ", Param: " + $(this).find("param").text() + "},"
+                });
+
+                return parametersJsonStart + paramtersJsonBody + parametersJsonEnd;
+            }
+
             $(document).on('click', '.btnAddParam', function () {
                 if ($("#paramName").val() != "" && $("#paramValue").val() != "") {
 
-                    $("#parametersList ul").append("<li><strong>Name</strong>: "
+                    $("#parametersList ul").append("<li><span class=\"name\">Name</span>: "
                         + $("#paramName").val()
-                        + ", <strong>Parameter</strong>: "
+                        + ", <span class=\"param\">Parameter</span>: "
                         + $("#paramValue").val()
                         + "</li>");
 

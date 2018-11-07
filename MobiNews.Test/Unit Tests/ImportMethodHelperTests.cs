@@ -9,7 +9,6 @@ using FluentAssertions;
 using MobiNews.Test.Classes;
 using MobiNews.Test.Enums;
 using MobiNews.Web.Helpers;
-using NUnit;
 using NUnit.Framework;
 
 namespace MobiNews.Test.Unit_Tests

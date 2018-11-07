@@ -3,23 +3,31 @@ using MockXmlFeedService;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Serialization;
 
-namespace MobiNews.Core.Handlers
+namespace MobiNews.Core.Definitions
 {
-    public class XMLFeedDataHandler : XmlHandlerBase, IXMLFeedDataHandler
+    public class UrlDefinition : DefintionBase, IUrlDefinition
     {
         private PublishingXml publishingXml;
         private IXmlFeedService _xmlFeedService;
+        private readonly string XMLFEEDURIKEY = "XmlFeedUriKey";
 
-        public XMLFeedDataHandler(IXmlFeedService xmlFeedService)
+        public UrlDefinition(IXmlFeedService xmlFeedService)
         {
             _xmlFeedService = xmlFeedService;
+        }
+
+        public UrlDefinition()
+        {
+            // default ctor
+        }
+
+        public void Process()
+        {
+            GetPublishingStories();
         }
 
         public PublishingXml GetPublishingStories()
@@ -43,7 +51,7 @@ namespace MobiNews.Core.Handlers
 
         public PublishingXml GetPublishingStories(string xmlFeedUri)
         {
-            if(!string.IsNullOrEmpty(xmlFeedUri))
+            if (!string.IsNullOrEmpty(xmlFeedUri))
             {
                 ProcessXmlFeed(xmlFeedUri);
             }

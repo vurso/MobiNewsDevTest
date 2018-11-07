@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AutofacModule.cs" />
+    <Compile Include="Definitions\DefintionBase.cs" />
+    <Compile Include="Definitions\IUrlDefinition.cs" />
+    <Compile Include="Definitions\UrlDefinition.cs" />
     <Compile Include="Dto\NewsStory.cs" />
     <Compile Include="Dto\Publishing.cs" />
     <Compile Include="Entities\ImportMethodsJson.cs" />
@@ -61,14 +64,14 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\XmlFeedDataExtensions.cs" />
     <Compile Include="Extensions\XmlFtpDataExtensions.cs" />
+    <Compile Include="Handlers\DefinitionHandler.cs" />
+    <Compile Include="Handlers\IDefinitionHandler.cs" />
     <Compile Include="Handlers\IJsonFileHandler.cs" />
     <Compile Include="Handlers\JsonFileHandler.cs" />
     <Compile Include="Handlers\JsonHandlerBase.cs" />
     <Compile Include="Handlers\XmlFtpDataHandler.cs" />
-    <Compile Include="Handlers\XMLFeedDataHandler.cs" />
     <Compile Include="Handlers\XmlHandlerBase.cs" />
     <Compile Include="Handlers\IXmlFtpDataHandler.cs" />
-    <Compile Include="Handlers\IXMLFeedDataHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
