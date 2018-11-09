@@ -2,6 +2,6 @@
 {
     public interface IDefinitionHandler
     {
-        void Process<T>(T definition);
+        void Process<T>(T definition, object[] paramArray);
     }
 }

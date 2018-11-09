@@ -18,6 +18,7 @@ namespace MobiNews.Test.Unit_Tests
         private ILifetimeScope _scope;
         private IXmlFeedService _xmlFeedService;
         private IUrlDefinition _urlDefinition;
+        private List<object> parameterArray;
 
 
         [SetUp]
@@ -31,12 +32,17 @@ namespace MobiNews.Test.Unit_Tests
                 _xmlFeedService = _scope.Resolve<IXmlFeedService>();
                 _urlDefinition = _scope.Resolve<IUrlDefinition>();
             }
+
+            parameterArray = new List<object>
+            {
+                _xmlFeedService
+            };
         }
 
         [Test]
         public void Execute_Process_Method_For_Given_Type()
         {
-            _definitionHandler.Process(_urlDefinition);
+            _definitionHandler.Process(_urlDefinition, parameterArray.ToArray());
         }
     }
 }

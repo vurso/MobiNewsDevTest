@@ -20,11 +20,6 @@ namespace MobiNews.Core.Definitions
             _xmlFeedService = xmlFeedService;
         }
 
-        public UrlDefinition()
-        {
-            // default ctor
-        }
-
         public void Process()
         {
             GetPublishingStories();
